@@ -1,4 +1,6 @@
 Flask==0.9
+numpy=1.7.0
+ffmpegwrapper
 ## ----------------------
 ## Production Server
 ## uncomment to deploy with an evented server.

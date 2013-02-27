@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 #from boilerflask.forms import (LoginForm)
 from boilerflask import app #, loginManager, crypt, db, cache
 import utils
-
+from numpy import *
 
 @app.route('/', methods=['GET'] )
 def index():
@@ -22,4 +22,3 @@ def forbidden(error):
 @app.errorhandler(500)
 def internal_server_error(error):
     return 'Cory should really handle this internal server error'
-
