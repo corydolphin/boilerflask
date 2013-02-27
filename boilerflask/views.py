@@ -12,8 +12,10 @@ def index():
 
 @app.route('/test')
 def testffmpeg():
-	res = subprocess.check_output("where ffmpeg", shell=True)
-	return render_template('index.html', messages=[res])
+	which_res = subprocess.check_output("which ffmpeg", shell=True)
+	help_res  = subprocess.check_output("ffmpeg", shell=True)
+	numpy_res = "Numpy Version is %s" % numpy.__version__
+	return render_template('index.html', messages=[res,help_res])
 
 
 
