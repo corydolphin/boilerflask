@@ -4,10 +4,18 @@ from flask import Flask, render_template, request
 from boilerflask import app #, loginManager, crypt, db, cache
 import utils
 from numpy import *
+import subprocess
 
 @app.route('/', methods=['GET'] )
 def index():
     return render_template('index.html')
+
+@app.route('/test')
+def testffmpeg():
+	res = subprocess.check_output("where ffmpeg", shell=True)
+	return render_template('index.html', messages=[res])
+
+
 
 @app.errorhandler(404)
 def page_not_found(error):

@@ -5,4 +5,10 @@
 <p>
     This is a very simple, boilerplated Flask application, configured with some basic structure to make life easy.
 </p>
+
+{% if messages %}
+	{% for m in messages %}
+	<p>{{m}}</p>
+	{% endfor %}
+{% endif %}
 {% endblock %}
